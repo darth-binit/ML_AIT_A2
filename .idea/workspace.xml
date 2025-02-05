@@ -4,21 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="862e366d-3645-4cd9-bc56-4f8908a0785a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/ML_AIT_A2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectA2/Out_287.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectA2/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectA2/auto-automobile-car-pictogram-service-traffic-transport--2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectA2/model/model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectA2/random_forest_model.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectA2/style/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectA2/tensor_working.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectA2/working.ipynb" afterDir="false" />
+    <list default="true" id="862e366d-3645-4cd9-bc56-4f8908a0785a" name="Changes" comment="Version 1.0">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +34,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "darth-binit"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/darth-binit/ML_AIT_A2.git",
+    "accountId": "916d436f-0deb-4e60-8cc9-ebd45cdc4825"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -99,8 +98,17 @@
       <workItem from="1738572983860" duration="23183000" />
       <workItem from="1738634649904" duration="26384000" />
       <workItem from="1738744106974" duration="13520000" />
-      <workItem from="1738763555486" duration="8417000" />
+      <workItem from="1738763555486" duration="8974000" />
     </task>
+    <task id="LOCAL-00001" summary="Version 1.0">
+      <option name="closed" value="true" />
+      <created>1738772105409</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1738772105409</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,6 +124,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Version 1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version 1.0" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ML_AIT_A2$app.coverage" NAME="app Coverage Results" MODIFIED="1738766740991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProjectA2" />
