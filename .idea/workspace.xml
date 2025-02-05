@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="862e366d-3645-4cd9-bc56-4f8908a0785a" name="Changes" comment="Version 1.0">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectA2/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectA2/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectA2/model/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectA2/model/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectA2/tensor_working.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectA2/tensor_working.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectA2/working.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectA2/working.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,18 +38,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "darth-binit"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;darth-binit&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/darth-binit/ML_AIT_A2.git",
-    "accountId": "916d436f-0deb-4e60-8cc9-ebd45cdc4825"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/darth-binit/ML_AIT_A2.git&quot;,
+    &quot;accountId&quot;: &quot;916d436f-0deb-4e60-8cc9-ebd45cdc4825&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -55,21 +59,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.app.executor": "Run",
-    "Python.model.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editor.preferences.completion",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.app.executor&quot;: &quot;Run&quot;,
+    &quot;Python.model.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/ProjectA2" />
@@ -99,6 +103,8 @@
       <workItem from="1738634649904" duration="26384000" />
       <workItem from="1738744106974" duration="13520000" />
       <workItem from="1738763555486" duration="8974000" />
+      <workItem from="1738772777170" duration="191000" />
+      <workItem from="1738777163293" duration="4185000" />
     </task>
     <task id="LOCAL-00001" summary="Version 1.0">
       <option name="closed" value="true" />
@@ -108,7 +114,23 @@
       <option name="project" value="LOCAL" />
       <updated>1738772105409</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Version 1.0">
+      <option name="closed" value="true" />
+      <created>1738772931659</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1738772931659</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Version 1.0">
+      <option name="closed" value="true" />
+      <created>1738772938713</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1738772938713</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,7 +152,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="Version 1.0" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ML_AIT_A2$app.coverage" NAME="app Coverage Results" MODIFIED="1738766740991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProjectA2" />
+    <SUITE FILE_PATH="coverage/ML_AIT_A2$app.coverage" NAME="app Coverage Results" MODIFIED="1738781164721" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProjectA2" />
     <SUITE FILE_PATH="coverage/ML_AIT_A2$model.coverage" NAME="model Coverage Results" MODIFIED="1738765312983" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ProjectA2/model" />
   </component>
 </project>

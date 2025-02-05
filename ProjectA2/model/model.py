@@ -1,5 +1,8 @@
 import numpy as np
 import pandas as pd
+import seaborn as sns
+import plotly.express as px
+
 class MyRegression:
     def __init__(self, regularization: float = None, lr: float = 0.01, method: str = 'mini_batch',
                  weight_init: str = 'zeros', batch_size: int = 64, n_epochs: int = 100, momentum: float = None,
@@ -303,3 +306,99 @@ class RidgeRegression(MyRegression):
     def __init__(self, l=0.1, **kwargs):
         super().__init__(regularization=L2Penalty(l=l), **kwargs)
 
+
+def get_expanded_feature_names(feature_names, poly_degree):
+    """
+    Expands feature names based on polynomial degrees (x, x^2, x^3, ...).
+
+    Args:
+    - feature_names (list): Original feature names.
+    - poly_degree (int): Polynomial degree used in the model.
+
+    Returns:
+    - expanded_feature_names (list): Updated feature names with polynomial degrees.
+    """
+    if poly_degree is None or poly_degree == 1:
+        return feature_names  # No transformation, return as is
+
+    expanded_feature_names = []
+
+    # Generate polynomial feature names (x, x^2, x^3, ...)
+    for degree in range(1, poly_degree + 1):
+        expanded_feature_names.extend([f"{col}^{degree}" for col in feature_names])
+
+    return expanded_feature_names
+
+
+def plot_feature_importance(coefficients, feature_names, poly_degree=None):
+    """
+    Plots feature importance using Plotly horizontal bar chart, considering polynomial features.
+
+    Parameters:
+    - coefficients (np.array): Model coefficients
+    - feature_names (list): Corresponding feature names
+    - poly_degree (int): Polynomial degree used in model
+
+    Returns:
+    - fig: Plotly figure
+    """
+
+    # Ensure coefficients are NumPy arrays
+    feature_importance = np.array(coefficients)
+
+    # Expand feature names to account for polynomial features
+    expanded_feature_names = get_expanded_feature_names(feature_names, poly_degree)
+
+    # Dictionary to sum importance across polynomial degrees
+    feature_weight_dict = {name.split("^")[0]: 0 for name in expanded_feature_names}
+
+    # Aggregate absolute importance values across different polynomial terms
+    for name, weight in zip(expanded_feature_names, feature_importance):
+        base_feature = name.split("^")[0]  # Extract base feature name
+        feature_weight_dict[base_feature] += abs(weight)
+
+    # Convert to DataFrame and sort by importance
+    coefs_df = pd.DataFrame(sorted(feature_weight_dict.items(), key=lambda x: x[1], reverse=True),
+                            columns=["Feature", "Importance"])
+
+    # Define Green Shades for Visualization
+    green_shades = [
+        "#0B3D02", "#0D5F00", "#145A32", "#166D25", "#1B8A3B", "#1D8348", "#229954", "#27AE60", "#2ECC71",
+        "#34D058", "#39D27F", "#3AE87D", "#42F59E", "#58D68D", "#5BE395", "#70EF9C", "#82E0AA", "#A9DFBF",
+        "#C8F7C5", "#D5F5E3"
+    ]
+
+    # Normalize importance for color scaling
+    max_importance = coefs_df["Importance"].max()
+    min_importance = coefs_df["Importance"].min()
+
+    if max_importance > min_importance:
+        normalized_importance = (coefs_df["Importance"] - min_importance) / (max_importance - min_importance)
+        color_indices = (normalized_importance * (len(green_shades) - 1)).astype(int)
+    else:
+        color_indices = np.full(len(coefs_df), len(green_shades) // 2)
+
+    colors = [green_shades[idx] for idx in color_indices]
+
+    # Create Plotly Horizontal Bar Chart
+    fig = px.bar(
+        coefs_df,
+        x="Importance",
+        y="Feature",
+        orientation="h",
+        text=coefs_df["Importance"].round(4),
+        color=coefs_df["Importance"],
+        color_continuous_scale=green_shades,
+        labels={"Importance": "Feature Importance", "Feature": "Features"},
+        title="Feature Importance Plot"
+    )
+
+    fig.update_traces(marker=dict(line=dict(color="black", width=1)))  # Border for bars
+    fig.update_layout(
+        template="plotly_white",
+        xaxis_title="Importance",
+        yaxis_title="Features",
+        coloraxis_showscale=False  # Hide color bar
+    )
+
+    return fig

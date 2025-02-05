@@ -11,7 +11,7 @@ import plotly.express as px
 import seaborn as sns
 import os
 from streamlit_js_eval import streamlit_js_eval
-from model.model import MyRegression, LassoRegression, L1Penalty
+from model.model import MyRegression, LassoRegression, L1Penalty, plot_feature_importance
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -41,7 +41,6 @@ if 'Unnamed: 0' in df.columns:
 cat_col = df.select_dtypes(include='object').columns.tolist()
 num_col = df.select_dtypes(include='number').columns.tolist()
 
-
 ##function for prediction
 def predict_A1(val):
     print('A1_input: ',val)
@@ -54,9 +53,7 @@ def predict_A1(val):
 
     return prediction
 
-def predict_A2(data):
-    print('User Input: ', data)
-
+def predict_A2(data, return_preprocessed=False):
     # Define Feature Groups
     categorical_features = ['fuel', 'seller_type', 'transmission']
     numerical_features = ['year', 'km_driven', 'owner', 'mileage', 'engine', 'max_power', 'seats']
@@ -68,26 +65,23 @@ def predict_A2(data):
     if data['brand_encoded'].isnull().any():
         data['brand_encoded'] = brand_means.mean()
 
-
     data.drop(columns=['brand'], inplace=True)
-
     data_encoded = encoder.transform(data[categorical_features])
     data_encoded_df = pd.DataFrame(data_encoded, columns=encoder.get_feature_names_out(categorical_features))
-
     data.drop(columns=categorical_features, inplace=True)
-
     data = pd.concat([data.reset_index(drop=True), data_encoded_df.reset_index(drop=True)], axis=1)
-
-
     final_numerical_features = numerical_features + ['brand_encoded']
-
     data[final_numerical_features] = scaler_modelA2.transform(data[final_numerical_features])
-
     data_final = data.values
-
     predicted_price = np.expm1(model_l._predict(data_final))
 
+    column_names = data.columns.tolist()
+
+    if return_preprocessed:
+        return column_names
+
     return predicted_price
+
 
 st.set_page_config(layout="wide")
 
@@ -175,6 +169,7 @@ if select == "Home | Descriptive ":
         fig = go.Figure(data=[trace], layout=layout)
         st.plotly_chart(fig, use_container_width=True)
 
+    ## Correlation Plot
     st.markdown('\n\n')
     st.markdown(
         f'<div style="background-image: linear-gradient(to right, #428142, #AAD4AA, 50%, transparent); font-size: 20px; padding: 8px; text-align: center;"> Correlation | Numerical Features </div>',
@@ -187,6 +182,18 @@ if select == "Home | Descriptive ":
     sns.heatmap(num_corr, mask=mask, xticklabels=num_corr.columns, yticklabels=num_corr.columns, annot=True, linewidths=.3,
                      cmap='Greens', vmin=-1, vmax=1, ax=ax)
     st.pyplot(fig)
+
+    ## Feature importance bar plot
+    st.markdown('\n\n')
+    st.markdown(
+        f'<div style="background-image: linear-gradient(to right, #428142, #AAD4AA, 50%, transparent); font-size: 20px; padding: 8px; text-align: center;"> Correlation | Feature Importance_ </div>',
+        unsafe_allow_html=True)
+    st.markdown('\n\n\n\n')
+
+    fig = plot_feature_importance(model_l._coef() , predict_A2(df.drop(columns=['selling_price']), return_preprocessed=True))
+
+    # Display in Streamlit
+    st.plotly_chart(fig, use_container_width=True)
 
 
 if select == 'Predictive Analytics':
