@@ -1,0 +1,18 @@
+artifact_path: model
+flavors:
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.6.1
+is_signature_from_type_hint: false
+mlflow_version: 2.20.0
+model_size_bytes: 464368
+model_uuid: d3cc7aea85b8475c84b707573336eace
+run_id: 7ec9ef80fed74b7dafa78692a1b9c5d9
+signature:
+  inputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float64", "shape": [-1, 12]}}]'
+  outputs: '[{"type": "any", "required": true}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2025-02-02 20:49:00.452978'
