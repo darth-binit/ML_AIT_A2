@@ -285,13 +285,14 @@ if select == 'Predictive Analytics':
         fig.update_traces(fill='toself', line_color='green')
         st.plotly_chart(fig, use_container_width=True)
 
-
-        st.markdown(f"""<div style='background-color:#c1d6c1 ; padding: 55px; border-radius: 3px'>
+        st.markdown('\n\n\n')
+        st.markdown(f"""<div style='background-color:#c1d6c1 ; padding: 60px; border-radius: 3px'>
                                                         <h2 style='text-align: center'>Notes</h2>
-                                                        <p style='font-size: 13px; text-align: center'> This is new and improved <strong>Version A2 model</strong>, which now features two models from A1 and A2, this is built
-                                                             entirely by using custom classes to create Regression Models, <strong>(Vanilla Regression | Ridge | Lasso)</strong>. The developer with rigourous testing 
+                                                        <p style='font-size: 13px; text-align: center'> This is new and robust <strong>Version A2 model</strong>, which now features two models A1 and A2, this is built
+                                                             entirely by using custom classes to create Regression Models from scatch, <strong>(Vanilla Regression | Ridge | Lasso)</strong>. The developer with rigourous testing 
                                                              found out that regularization works well to stablize the model thereby giving good results. For using the model, it is similar to previous version
-                                                              only that here you have to <span style='color:#C70039; font-weight:bold;'>press the button of the model</span> your choice and then the model will predict an output for you</p></div>""",
+                                                              only that here you have to <span style='color:#C70039; font-weight:bold;'>press the button of the model</span> of your choice and then the model will predict an output for you.
+                                                              The author have choosen Regression with L1 penalty (Lasso).Since we have a discrete and a continuos feature, ensemble/trees model perform better regression.</p></div>""",
 
                                         unsafe_allow_html=True)
 
