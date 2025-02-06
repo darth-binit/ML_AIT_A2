@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  web:
+    image: binit13/model-a2:v1
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8501
+    labels:
+      # Allow Traefik to talk with your service
+      - traefik.enable=true
+      # Tell Traefik to use port 8501 (not 80, since it's Streamlit)
+      - traefik.http.services.web-st124783_1.loadbalancer.server.port=8501
+      # Define your subdomain (change `ml-app` to your unique service name)
+      - traefik.http.routers.web-st124783_1.rule=Host(`ml-app.ml.brain.cs.ait.ac.th`)
+      # Enable SSL
+      - traefik.http.routers.web-st124783_1.tls=true
+      - traefik.http.routers.web-st124783_1.certresolver=production
+      - traefik.http.routers.web-st124783_1.entrypoints=websecure
+    networks:
+      - default
+      - traefik_default
+
+networks:
+  default:
+  traefik_default:
+    external: true

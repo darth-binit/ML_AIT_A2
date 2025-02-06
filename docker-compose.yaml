@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  web:
+    image: binit13/model-a2:v1
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8501
+    ports:
+      - "4000:8501"

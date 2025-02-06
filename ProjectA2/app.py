@@ -10,7 +10,6 @@ import plotly.graph_objects as go
 import plotly.express as px
 import seaborn as sns
 import os
-from streamlit_js_eval import streamlit_js_eval
 from model.model import MyRegression, LassoRegression, L1Penalty, plot_feature_importance
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
