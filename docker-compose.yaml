@@ -3,6 +3,7 @@ version: '3'
 services:
   web:
     image: binit13/model-a2:v1
+    platform: linux/amd64/v3
     build:
       context: .
       dockerfile: Dockerfile

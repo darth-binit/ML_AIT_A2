@@ -1,4 +1,4 @@
-FROM python:3.12
+FROM python:3.12-slim
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -13,8 +13,9 @@ RUN pip install --upgrade pip && \
 # Copy the rest of the project files
 COPY ProjectA2/ /app/
 
-# Expose the Streamlit port
+# Expose the correct Streamlit port
 EXPOSE 8501
 
-# Run the application
-CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.enableCORS=false"]
+# Run the application with the correct port
+CMD ["streamlit", "run", "app.py"]
+#, "--server.address=0.0.0.0", "--server.port=8501", "--server.enableCORS=false"]
